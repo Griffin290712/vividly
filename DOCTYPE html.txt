@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vividly | Home</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #FFFDF7;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: #708238;
+      color: #FFFDF7;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 3rem;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    main {
+      margin-top: 50px;
+    }
+
+    button {
+      background-color: #D8CAB8;
+      color: #333;
+      border: none;
+      padding: 15px 40px;
+      margin: 15px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #A8A29E;
+      color: white;
+    }
+
+    .page {
+      display: none;
+      margin-top: 40px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      color: #708238;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Vividly</h1>
+    <p>An online space to explore and collect unique art</p>
+  </header>
+
+  <main>
+    <button onclick="showPage('clay')">Clay</button>
+    <button onclick="showPage('paint')">Paint</button>
+    <button onclick="showPage('photography')">Photography</button>
+    <button onclick="showPage('digital')">Digital Art</button>
+
+    <div id="clay" class="page">
+      <h2>Clay Art</h2>
+      <p>Explore handmade ceramic and clay artworks.</p>
+      <a href="#" onclick="showPage('home')">← Back to Home</a>
+    </div>
+
+    <div id="paint" class="page">
+      <h2>Paintings</h2>
+      <p>Discover original paintings in various styles and media.</p>
+      <a href="#" onclick="showPage('home')">← Back to Home</a>
+    </div>
+
+    <div id="photography" class="page">
+      <h2>Photography</h2>
+      <p>Browse fine art photography from talented creators.</p>
+      <a href="#" onclick="showPage('home')">← Back to Home</a>
+    </div>
+
+    <div id="digital" class="page">
+      <h2>Digital Art</h2>
+      <p>View stunning digital creations and illustrations.</p>
+      <a href="#" onclick="showPage('home')">← Back to Home</a>
+    </div>
+  </main>
+
+  <script>
+    function showPage(pageId) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => page.classList.remove('active'));
+
+      if (pageId === 'home') return;
+
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
